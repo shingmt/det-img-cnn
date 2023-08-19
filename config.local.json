@@ -1,0 +1,12 @@
+{
+    "kafka_bootstrap_servers": ["172.17.0.1:9092"],
+    "module_code": "det-img-cnn",
+    "module_type": "detector",
+    "module_otype": "file",
+    "module_indir": "/home/mta-smad/smad-3/data/modules/det-img-cnn/input",
+    "module_outdir": "",
+    "module_input_format": "filepath",
+    "module_output_format": "boolean",
+
+    "model_path": "/home/mta-smad/smad-modules/det-img-cnn/models/rgb.h5"
+}
