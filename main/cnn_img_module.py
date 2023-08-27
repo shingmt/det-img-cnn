@@ -54,7 +54,7 @@ class CNN_Img_Module:
         print('[ ][CNN_Img_Module][from_files] _map_ohash_inputs', _map_ohash_inputs)
 
         if self._model is None:
-            log('[!][CNN_Img_Module][change_config] `model` not found', 'error')
+            log('[!][CNN_Img_Module][from_files] `model` not found', 'error')
             #? return empty result for each item
             result = {ohash: '' for ohash in _map_ohash_inputs.keys()}
             callback(result)

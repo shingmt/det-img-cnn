@@ -45,7 +45,7 @@ class SilentWorker(SilentWorkerBase):
         print('[ ][SilentWorker][init] config = ', config)
         self.cnn_img = CNN_Img_Module(config)
 
-    
+
     def onChangeConfig(self, config_data):
         """
         Callback function when module's config is changed.
@@ -89,7 +89,8 @@ class SilentWorker(SilentWorkerBase):
         #! Do something
         log('[ ][SilentWorker][infer] I\'m pretty')
 
-        try:
+        # try:
+        if True:
             self.cnn_img.from_files(self._map_ohash_inputs, self.__onFinishInfer__)
-        except:
-            log('[x][SilentWorker][infer] Ouch', 'error')
+        # except:
+        #     log('[x][SilentWorker][infer] Ouch', 'error')

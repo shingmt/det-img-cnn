@@ -8,5 +8,5 @@
     "module_input_format": "filepath",
     "module_output_format": "boolean",
 
-    "model_path": "/home/mta-smad/smad-modules/det-img-cnn/models/rgb.h5"
+    "model_path": "/home/alex/smad-modules/det-img-cnn/models/rgb.h5"
 }
