@@ -89,8 +89,8 @@ class SilentWorker(SilentWorkerBase):
         #! Do something
         log('[ ][SilentWorker][infer] I\'m pretty')
 
-        # try:
-        if True:
+        try:
+        # if True:
             self.cnn_img.from_files(self._map_ohash_inputs, self.__onFinishInfer__)
-        # except:
-        #     log('[x][SilentWorker][infer] Ouch', 'error')
+        except Exception as e:
+            log(f'[!][SilentWorker][infer] Failed with exception: {e}')

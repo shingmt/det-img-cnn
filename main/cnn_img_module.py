@@ -79,16 +79,18 @@ class CNN_Img_Module:
             print('[ ][CNN_Img_Module][from_files] X', X.shape, X.shape[0], X.shape[1], X.shape[2])
             X = np.reshape(X, (1,X.shape[0],X.shape[1],X.shape[2]))
             print('[ ][CNN_Img_Module][from_files] X reshaped', X.shape)
-            preds = self._model.predict(X)
+            # preds = self._model.predict(X)
+            preds = [pred[0] for pred in self._model.predict(X)]
             print('[+][CNN_Img_Module][from_files] preds', preds)
-            lbl_preds = preds.argmax(axis=1)
+            # lbl_preds = preds.argmax(axis=1)
+            lbl_preds = np.array([1 if pred > 0.99 else 0 for pred in preds]) #? only 1 or 0 (boolean result)
             print('[+][CNN_Img_Module][from_files] lbl_preds', lbl_preds)
             # return lbl_preds, preds
 
             #? Callbacks on finish
             k = 0
             result[ohash] = bool(int(lbl_preds[k]))
-            note[ohash] = [float(v) for v in list(preds[k])]
+            note[ohash] = float(preds[k])
             k += 1
 
         #! Call __onFinishInfer__ when the analysis is done. This can be called from anywhere in your code. In case you need synchronous processing
